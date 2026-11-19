@@ -1,0 +1,10 @@
+// Cloudflare Workers (static assets only). Workers Builds runs `npm run build`, then `npx wrangler deploy`.
+// Pages ignores this file.
+{
+  "name": "latent-ui-registry",
+  "compatibility_date": "2025-06-01",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "single-page-application"
+  }
+}

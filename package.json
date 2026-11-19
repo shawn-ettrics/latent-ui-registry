@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && shadcn build && vite build",
+    "build": "tsc -b && shadcn build && node scripts/set-url.mjs && vite build",
     "typecheck": "tsc -b",
     "registry:build": "shadcn build"
   },
