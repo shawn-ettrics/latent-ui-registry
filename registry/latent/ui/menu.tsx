@@ -23,9 +23,9 @@ export function MenuContent({ children, align = "start", className }: { children
   );
 }
 
-export function MenuItem({ children, onSelect, shortcut, disabled }: { children: ReactNode; onSelect?: () => void; shortcut?: ReactNode; disabled?: boolean }) {
+export function MenuItem({ children, onSelect, shortcut, disabled, className }: { children: ReactNode; onSelect?: () => void; shortcut?: ReactNode; disabled?: boolean; className?: string }) {
   return (
-    <DM.Item onSelect={onSelect} disabled={disabled} className={item}>
+    <DM.Item onSelect={onSelect} disabled={disabled} className={cn(item, className)}>
       {children}
       {shortcut && <span className="ml-auto text-xs text-muted-foreground">{shortcut}</span>}
     </DM.Item>

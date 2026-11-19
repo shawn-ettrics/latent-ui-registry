@@ -1,5 +1,5 @@
 import { Fragment, useMemo, useState, type CSSProperties, type KeyboardEvent, type ReactNode } from "react";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, ChevronRight, Star } from "lucide-react";
 import { cn } from "@/registry/latent/lib/utils";
 
 /* ------------------------------------------------------------------ *
@@ -167,14 +167,14 @@ export function DataTable<T>({ columns, rows, getRowId, hidden, groupBy, onRowCl
 /* ---------- cell helpers: the patterns every list uses ---------- */
 
 /** Grouped first cell: ID + 16px icon slot + title with a subline. One 8px gap, one set of padding. */
-export function TitleCell({ id, icon, title, sub, monoSub = true }: { id?: string; icon?: ReactNode | "empty"; title: ReactNode; sub?: ReactNode; monoSub?: boolean }) {
+export function TitleCell({ id, icon, title, sub, monoSub = true }: { id?: ReactNode; icon?: ReactNode | "empty" | false; title: ReactNode; sub?: ReactNode; monoSub?: boolean }) {
   return (
     <div className="flex min-w-0 flex-1 items-start gap-2">
-      {id && <span className="shrink-0 font-mono text-xs leading-5 text-foreground">{id}</span>}
-      {icon !== undefined && <span className="flex size-4 shrink-0 translate-y-0.5 items-center">{icon === "empty" ? null : icon}</span>}
+      {id && <span className="flex h-5 shrink-0 items-center font-mono text-sm leading-none text-foreground">{id}</span>}
+      {icon !== undefined && icon !== false && <span className="flex h-5 w-4 shrink-0 items-center">{icon === "empty" ? null : icon}</span>}
       <div className="min-w-0 flex-1">
-        <div className="text-base leading-5 text-foreground">{title}</div>
-        {sub && <div className={cn("mt-1 text-xs leading-[18px] text-muted-foreground", monoSub && "font-mono tracking-[-.025em]")}>{sub}</div>}
+        <div className="text-base font-medium leading-5 text-foreground">{title}</div>
+        {sub && <div className={cn("mt-0.5 flex flex-wrap items-center gap-x-1 text-xs leading-[18px] text-muted-foreground [&_svg]:size-3.5", monoSub && "font-mono tracking-[-.025em]")}>{sub}</div>}
       </div>
     </div>
   );
@@ -193,14 +193,17 @@ export function DateCell({ main, sub }: { main: ReactNode; sub?: ReactNode }) {
   );
 }
 
-/** Mono trail of resources: a › b › ★ c */
+/** Trail under a path title, as in the prototype (.mr/.mrn): mono 12px, muted, chevron separators, crown jewel starred at normal weight. */
 export function Trail({ items, jewelLast }: { items: string[]; jewelLast?: boolean }) {
   return (
-    <span className="flex flex-wrap items-center gap-x-1">
+    <span className="flex flex-wrap items-center gap-x-1 font-mono text-xs leading-[18px] tracking-[-0.025em] text-muted-foreground">
       {items.map((t, i) => (
         <Fragment key={i}>
-          {i > 0 && <span className="text-text-subtle">›</span>}
-          <span className="whitespace-nowrap">{jewelLast && i === items.length - 1 ? <><span className="text-[var(--warning-emphasis)]">★</span> {t}</> : t}</span>
+          {i > 0 && <ChevronRight className="size-[9px] shrink-0 text-text-subtle" strokeWidth={2} />}
+          <span className="inline-flex items-center gap-1 whitespace-nowrap">
+            {jewelLast && i === items.length - 1 && <Star className="size-3 shrink-0 fill-node-crown text-node-crown" strokeWidth={0} />}
+            {t}
+          </span>
         </Fragment>
       ))}
     </span>

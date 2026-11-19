@@ -313,7 +313,8 @@
         "lucide-react@0.469.0"
       ],
       "registryDependencies": [
-        "https://latent-ui-registry.shawn-be0.workers.dev/r/utils.json"
+        "https://latent-ui-registry.shawn-be0.workers.dev/r/utils.json",
+        "https://latent-ui-registry.shawn-be0.workers.dev/r/button.json"
       ],
       "files": [
         {

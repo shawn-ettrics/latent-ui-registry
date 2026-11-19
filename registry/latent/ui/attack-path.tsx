@@ -124,7 +124,7 @@ function Node({ node, on, selected, onSelect }: { node: PathNode; on: boolean; s
         <b className={cn("text-sm font-semibold", selected ? "text-foreground" : "text-text-secondary group-hover:text-foreground")}>{node.title}</b>
         {node.name && (
           <span className={cn("flex items-center gap-1.5 truncate text-xs text-text-secondary", node.mono && "font-mono")}>
-            {node.jewel && <Star className="size-2.5 shrink-0 fill-[var(--warning-emphasis)] text-[var(--warning-emphasis)]" />}
+            {node.jewel && <Star className="size-2.5 shrink-0 fill-node-crown text-node-crown" />}
             {node.name}
           </span>
         )}

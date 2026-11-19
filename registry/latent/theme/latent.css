@@ -268,7 +268,7 @@
 
   /* LD additions: graph */
   --node-entry: var(--green-500);
-  --node-crown: var(--yellow-500);
+  --node-crown: var(--orange-400);
   --node-default: var(--gray-400);
   --edge-default: var(--gray-300);
   --edge-active: var(--blue-600);
@@ -381,7 +381,7 @@
 
 /* ---------- Surfaces added during dark pass ---------- */
 :root{--row-tint:var(--surface-subtle);--code-bg:var(--gray-50);--code-border:var(--gray-150)}
-:root.dark{--row-tint:color-mix(in srgb,var(--foreground) 5%,var(--background));--code-bg:color-mix(in srgb,var(--foreground) 9%,var(--card));--code-border:color-mix(in srgb,var(--foreground) 14%,var(--card))}
+:root.dark{--row-tint:color-mix(in srgb,var(--foreground) 3%,var(--background));--code-bg:color-mix(in srgb,var(--foreground) 9%,var(--card));--code-border:color-mix(in srgb,var(--foreground) 14%,var(--card))}
 /* ---------- Ash dark (overrides .dark) ---------- */
 :root.dark{--background:var(--gray-750);--foreground:var(--gray-100);--card:var(--gray-700);--card-foreground:var(--gray-100);--popover:var(--gray-700);--popover-foreground:var(--gray-100);--secondary:var(--gray-675);--secondary-foreground:var(--gray-100);--muted:var(--gray-675);--muted-foreground:var(--gray-400);--accent:var(--gray-675);--accent-foreground:var(--gray-100);--border:var(--gray-675);--input:var(--gray-650);--sidebar:var(--gray-775);--sidebar-foreground:var(--gray-100);--sidebar-accent:var(--gray-700);--sidebar-border:var(--gray-700);--surface-subtle:var(--gray-775);--text-subtle:var(--gray-450);--verdict-refuted-muted:var(--gray-675);--edge-default:var(--gray-650)}
 
@@ -489,3 +489,6 @@
   --text-3xl: var(--fs-3xl);
   --text-3xl--line-height: 1.1;
 }
+
+/* Grayscale antialiasing on macOS, so text weight matches across the prototype, docs and app */
+html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
