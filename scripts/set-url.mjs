@@ -2,7 +2,7 @@
 // Set REGISTRY_URL in the Cloudflare build settings (e.g. https://latent-ui-registry.<you>.workers.dev).
 import { readdirSync, readFileSync, writeFileSync } from "node:fs";
 
-const DEFAULT = "https://latent-ui-registry.pages.dev";
+const DEFAULT = "https://latent-ui-registry.shawn-be0.workers.dev";
 const url = (process.env.REGISTRY_URL || DEFAULT).replace(/\/+$/, "");
 if (url === DEFAULT) { console.log(`registry URL: ${url} (default)`); process.exit(0); }
 const dir = "public/r";

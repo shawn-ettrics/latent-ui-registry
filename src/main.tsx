@@ -25,7 +25,7 @@ import { cn } from "@/registry/latent/lib/utils";
 import { OBJECT_ICONS } from "@/registry/latent/lib/object-icons";
 
 // install commands use whatever host serves the docs, so they are right on pages.dev, workers.dev or a custom domain
-const URL_BASE = (/^https?:\/\/localhost/.test(location.origin) ? "https://latent-ui-registry.pages.dev" : location.origin) + "/r";
+const URL_BASE = (/^https?:\/\/localhost/.test(location.origin) ? "https://latent-ui-registry.shawn-be0.workers.dev" : location.origin) + "/r";
 const PRI = ["Critical", "High", "Medium", "Low"];
 const VER: VerdictState[] = ["Assessing", "Failed", "Confirmed", "Conditional", "Inconclusive", "Refuted"];
 const ST: RemStatus[] = ["Open", "In progress", "Resolved", "Dismissed"];

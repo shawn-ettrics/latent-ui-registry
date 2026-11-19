@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
   "name": "latent",
-  "homepage": "https://latent-ui-registry.pages.dev",
+  "homepage": "https://latent-ui-registry.shawn-be0.workers.dev",
   "items": [
     {
       "name": "theme",
@@ -42,7 +42,7 @@
       "description": "16px verdict and remediation-status glyphs on one 24px grid.",
       "dependencies": [],
       "registryDependencies": [
-        "https://latent-ui-registry.pages.dev/r/utils.json"
+        "https://latent-ui-registry.shawn-be0.workers.dev/r/utils.json"
       ],
       "files": [
         {
@@ -60,7 +60,7 @@
         "@radix-ui/react-tooltip"
       ],
       "registryDependencies": [
-        "https://latent-ui-registry.pages.dev/r/utils.json"
+        "https://latent-ui-registry.shawn-be0.workers.dev/r/utils.json"
       ],
       "files": [
         {
@@ -78,8 +78,8 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "https://latent-ui-registry.pages.dev/r/utils.json",
-        "https://latent-ui-registry.pages.dev/r/tooltip.json"
+        "https://latent-ui-registry.shawn-be0.workers.dev/r/utils.json",
+        "https://latent-ui-registry.shawn-be0.workers.dev/r/tooltip.json"
       ],
       "files": [
         {
@@ -98,8 +98,8 @@
         "lucide-react@0.469.0"
       ],
       "registryDependencies": [
-        "https://latent-ui-registry.pages.dev/r/utils.json",
-        "https://latent-ui-registry.pages.dev/r/tooltip.json"
+        "https://latent-ui-registry.shawn-be0.workers.dev/r/utils.json",
+        "https://latent-ui-registry.shawn-be0.workers.dev/r/tooltip.json"
       ],
       "files": [
         {
@@ -117,8 +117,8 @@
         "lucide-react@0.469.0"
       ],
       "registryDependencies": [
-        "https://latent-ui-registry.pages.dev/r/utils.json",
-        "https://latent-ui-registry.pages.dev/r/tooltip.json"
+        "https://latent-ui-registry.shawn-be0.workers.dev/r/utils.json",
+        "https://latent-ui-registry.shawn-be0.workers.dev/r/tooltip.json"
       ],
       "files": [
         {
@@ -134,7 +134,7 @@
       "description": "Borderless filled field with a ring border on focus.",
       "dependencies": [],
       "registryDependencies": [
-        "https://latent-ui-registry.pages.dev/r/utils.json"
+        "https://latent-ui-registry.shawn-be0.workers.dev/r/utils.json"
       ],
       "files": [
         {
@@ -153,8 +153,8 @@
         "lucide-react@0.469.0"
       ],
       "registryDependencies": [
-        "https://latent-ui-registry.pages.dev/r/utils.json",
-        "https://latent-ui-registry.pages.dev/r/badge.json"
+        "https://latent-ui-registry.shawn-be0.workers.dev/r/utils.json",
+        "https://latent-ui-registry.shawn-be0.workers.dev/r/badge.json"
       ],
       "files": [
         {
@@ -187,7 +187,7 @@
         "lucide-react@0.469.0"
       ],
       "registryDependencies": [
-        "https://latent-ui-registry.pages.dev/r/utils.json"
+        "https://latent-ui-registry.shawn-be0.workers.dev/r/utils.json"
       ],
       "files": [
         {
@@ -221,8 +221,8 @@
         "lucide-react@0.469.0"
       ],
       "registryDependencies": [
-        "https://latent-ui-registry.pages.dev/r/utils.json",
-        "https://latent-ui-registry.pages.dev/r/tooltip.json"
+        "https://latent-ui-registry.shawn-be0.workers.dev/r/utils.json",
+        "https://latent-ui-registry.shawn-be0.workers.dev/r/tooltip.json"
       ],
       "files": [
         {
@@ -240,7 +240,7 @@
         "lucide-react@0.469.0"
       ],
       "registryDependencies": [
-        "https://latent-ui-registry.pages.dev/r/utils.json"
+        "https://latent-ui-registry.shawn-be0.workers.dev/r/utils.json"
       ],
       "files": [
         {
@@ -256,7 +256,7 @@
       "description": "Segmented quick-view tabs with counts, 32px, keyboard arrows.",
       "dependencies": [],
       "registryDependencies": [
-        "https://latent-ui-registry.pages.dev/r/utils.json"
+        "https://latent-ui-registry.shawn-be0.workers.dev/r/utils.json"
       ],
       "files": [
         {
@@ -274,7 +274,7 @@
         "lucide-react@0.469.0"
       ],
       "registryDependencies": [
-        "https://latent-ui-registry.pages.dev/r/utils.json"
+        "https://latent-ui-registry.shawn-be0.workers.dev/r/utils.json"
       ],
       "files": [
         {
@@ -294,8 +294,8 @@
         "lucide-react@0.469.0"
       ],
       "registryDependencies": [
-        "https://latent-ui-registry.pages.dev/r/utils.json",
-        "https://latent-ui-registry.pages.dev/r/badge.json"
+        "https://latent-ui-registry.shawn-be0.workers.dev/r/utils.json",
+        "https://latent-ui-registry.shawn-be0.workers.dev/r/badge.json"
       ],
       "files": [
         {
@@ -313,7 +313,7 @@
         "lucide-react@0.469.0"
       ],
       "registryDependencies": [
-        "https://latent-ui-registry.pages.dev/r/utils.json"
+        "https://latent-ui-registry.shawn-be0.workers.dev/r/utils.json"
       ],
       "files": [
         {
@@ -332,7 +332,7 @@
         "lucide-react@0.469.0"
       ],
       "registryDependencies": [
-        "https://latent-ui-registry.pages.dev/r/utils.json"
+        "https://latent-ui-registry.shawn-be0.workers.dev/r/utils.json"
       ],
       "files": [
         {
@@ -351,7 +351,7 @@
         "lucide-react@0.469.0"
       ],
       "registryDependencies": [
-        "https://latent-ui-registry.pages.dev/r/utils.json"
+        "https://latent-ui-registry.shawn-be0.workers.dev/r/utils.json"
       ],
       "files": [
         {
