@@ -348,6 +348,8 @@ const PAGES: Page[] = [
         <H2>3. Add components</H2>
         <Pre>{`npx shadcn@latest add ${URL_BASE}/badge.json\nnpx shadcn@latest add ${URL_BASE}/sidebar.json`}</Pre>
         <p className="text-muted-foreground">Dependencies (utils, icons, tooltip) install automatically. Wrap the app once in <code className="font-mono">{"<TooltipProvider>"}</code>.</p>
+        <H2>Live demo</H2>
+        <p className="text-muted-foreground">See the components working together in the Latent Defense triage app (fictional Acme data): <a className="text-foreground underline" href="/demo/" target="_blank" rel="noreferrer">open the live demo</a>.</p>
         <H2>Dark mode</H2>
         <p className="text-muted-foreground">Toggle the <code className="font-mono">dark</code> class on <code className="font-mono">{"<html>"}</code>. Every token has a dark value.</p>
       </>
@@ -730,6 +732,10 @@ function App() {
         <nav className="sticky top-0 h-screen overflow-auto border-r border-sidebar-border bg-sidebar px-2.5 py-4 max-md:static max-md:h-auto">
           <div className="px-2 pt-1 text-base font-semibold">Latent Defense</div>
           <div className="px-2 pb-2 text-xs text-muted-foreground">UI registry · v0</div>
+          <a href="/demo/" target="_blank" rel="noreferrer"
+            className="mx-2 mt-2 block rounded-md border border-sidebar-border px-2 py-1.5 text-center text-xs text-sidebar-foreground no-underline hover:bg-sidebar-accent">
+            Live demo ↗
+          </a>
           <div className="mx-2 mt-3 mb-1 flex gap-0.5 rounded-lg bg-muted p-[3px]">
             {(["light", "dark"] as const).map((t) => (
               <button key={t} onClick={() => setTheme(t)}

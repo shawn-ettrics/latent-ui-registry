@@ -36,7 +36,7 @@ export function MenuItem({ children, onSelect, shortcut, disabled }: { children:
 export function MenuCheckboxItem({ children, checked, onCheckedChange, count }: { children: ReactNode; checked: boolean; onCheckedChange: (v: boolean) => void; count?: number }) {
   return (
     <DM.CheckboxItem checked={checked} onCheckedChange={(v) => onCheckedChange(!!v)} onSelect={(e) => e.preventDefault()} className={item}>
-      <span className={cn("flex size-3.5 items-center justify-center rounded-[4px] border", checked ? "border-primary bg-primary text-primary-foreground" : "border-border")}>
+      <span className={cn("flex size-3.5 items-center justify-center rounded-[4px] border", checked ? "border-primary bg-primary text-primary-foreground" : "border-[color:color-mix(in_srgb,var(--foreground)_25%,transparent)]")}>
         <DM.ItemIndicator><Check className="!size-2.5" strokeWidth={3} /></DM.ItemIndicator>
       </span>
       <span className="flex-1">{children}</span>

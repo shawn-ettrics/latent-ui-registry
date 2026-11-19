@@ -3,6 +3,7 @@
 A [shadcn registry](https://ui.shadcn.com/docs/registry) of Latent Defense components, plus a docs site that shows every component live.
 
 - Docs: https://latent-ui-registry.shawn-be0.workers.dev
+- Live demo (the triage app built from these components, fictional Acme data): https://latent-ui-registry.shawn-be0.workers.dev/demo/
 - Registry files: https://latent-ui-registry.shawn-be0.workers.dev/r/<item>.json
 
 ## Using it in your app
@@ -45,6 +46,8 @@ npm install
 npm run dev        # docs site on http://localhost:5190
 npm run build      # typecheck + registry JSON (public/r) + docs site (dist)
 ```
+
+The live demo is a prebuilt copy of the Latent Defense React app, committed in `demo/` and copied to `dist/demo/` by `npm run build` (`scripts/copy-demo.mjs`). To refresh it, run `npm run build:demo` in the app (builds with base `/demo/` into `../registry/demo`), then rebuild and deploy here.
 
 Component sources live in `registry/latent/`. Add or change an item in `registry.json`, then rebuild.
 
