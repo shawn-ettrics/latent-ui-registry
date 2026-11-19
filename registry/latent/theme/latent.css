@@ -1,0 +1,491 @@
+/* Latent Defense theme: design tokens (source: mock-data/design-system/tokens.css)
+   plus the Tailwind v4 mapping. Import once after "tailwindcss". */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* =========================================================================
+   Latent Defense — design tokens (draft v0)
+   Format: shadcn/ui-compatible CSS variables.
+   Tiers:  1. primitives (raw values, never used by components)
+           2. semantic   (shadcn names + LD additions; components use these)
+   Values pulled from triage-v2.html. Dark values are a first pass.
+   ========================================================================= */
+
+/* ---------- 1. Primitives ---------- */
+:root {
+  /* Warm gray */
+  --gray-0: #ffffff;
+  --gray-25: #f8f9fc;
+  --gray-50: #f5f6f9;
+  --gray-100: #f1f2f5;
+  --gray-150: #eeeff2;
+  --gray-200: #e1e2e4;
+  --gray-300: #d4d5dc;
+  --gray-350: #b3b4bb;
+  --gray-400: #999aa1;
+  --gray-450: #83848a;
+  --gray-500: #696a70;
+  --gray-600: #5d5e65;
+  --gray-650: #4a4b52;
+  --gray-675: #3f4047;
+  --gray-700: #383a40;
+  --gray-750: #323339;
+  --gray-775: #2b2c32;
+  --gray-800: #28292f;
+  --gray-850: #1d1e24;
+  --gray-900: #1a1b21;
+  --gray-950: #111217;
+
+  /* Blue (brand) */
+  --blue-50: #f3f7fe;
+  --blue-100: #e4edfe;
+  --blue-200: #c8dcfe;
+  --blue-300: #9bbefe;
+  --blue-400: #6b98ed;
+  --blue-500: #4773c8;
+  --blue-600: #345fb2;
+  --blue-700: #254d99;
+  --blue-800: #183a7c;
+  --blue-900: #0e295e;
+  --blue-950: #071b44;
+
+  /* Red */
+  --red-50: #fdecec;
+  --red-100: #ffe6e4;
+  --red-200: #ffcdc8;
+  --red-300: #ffa59e;
+  --red-400: #fe726c;
+  --red-500: #d64545;
+  --red-600: #c23b3b;
+  --red-700: #b42318;
+  --red-800: #870e18;
+  --red-900: #65020c;
+  --red-950: #440105;
+
+  /* Orange */
+  --orange-50: #fdf1e0;
+  --orange-100: #fee8d7;
+  --orange-200: #fed1ac;
+  --orange-300: #fbad6b;
+  --orange-400: #e08a1e;
+  --orange-500: #c97107;
+  --orange-600: #a85d00;
+  --orange-700: #8a4c01;
+  --orange-800: #6b3901;
+  --orange-900: #4d2801;
+  --orange-950: #341900;
+
+  /* Yellow */
+  --yellow-50: #fbf5d9;
+  --yellow-100: #fef2c8;
+  --yellow-200: #f8e4a1;
+  --yellow-300: #efd274;
+  --yellow-400: #e0be47;
+  --yellow-500: #c9a61a;
+  --yellow-600: #af8f00;
+  --yellow-700: #866a00;
+  --yellow-800: #6a5601;
+  --yellow-900: #4a3c00;
+  --yellow-950: #302501;
+
+  /* Green */
+  --green-50: #e3f3e8;
+  --green-100: #d3facf;
+  --green-200: #b0eeac;
+  --green-300: #84d97f;
+  --green-400: #58bf55;
+  --green-500: #209622;
+  --green-600: #0b8c12;
+  --green-700: #1f7a3d;
+  --green-800: #025806;
+  --green-900: #003f02;
+  --green-950: #002901;
+
+  /* Purple */
+  --purple-50: #f4ebf9;
+  --purple-100: #f3e7ff;
+  --purple-200: #e7cffe;
+  --purple-300: #d8aaff;
+  --purple-400: #c67eff;
+  --purple-500: #ae5fe7;
+  --purple-600: #9545cc;
+  --purple-700: #8c3bc2;
+  --purple-800: #621e8c;
+  --purple-900: #471068;
+  --purple-950: #2f0648;
+  --magenta-50: #fdf0f8;
+  --magenta-100: #fce4f3;
+  --magenta-200: #f9c8e8;
+  --magenta-300: #f49fd6;
+  --magenta-400: #ec6cbf;
+  --magenta-500: #dc44a6;
+  --magenta-600: #c02d8b;
+  --magenta-700: #a02372;
+  --magenta-800: #7e1d5b;
+  --magenta-900: #5c1544;
+  --magenta-950: #3d0b2c;
+
+  /* Teal */
+  --teal-50: #e6f3f3;
+  --teal-100: #d6f4f2;
+  --teal-200: #b5e6e4;
+  --teal-300: #8ccfcd;
+  --teal-400: #63b5b2;
+  --teal-500: #439b98;
+  --teal-600: #268280;
+  --teal-700: #0f7472;
+  --teal-800: #015352;
+  --teal-900: #013b3a;
+  --teal-950: #002726;
+
+  /* Type */
+  --font-sans: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "DM Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  /* type: fluid between 1280px and 1920px viewport width */
+  --fs-2xs: clamp(11.5px, 10.500px + 0.0781vw, 12px);
+  --fs-xs: clamp(12px, 11.000px + 0.0781vw, 12.5px);
+  --fs-sm: clamp(13px, 12.000px + 0.0781vw, 13.5px);
+  --fs-base: clamp(14px, 12.000px + 0.1562vw, 15px);
+  --fs-lg: clamp(15.5px, 13.500px + 0.1562vw, 16.5px);
+  --fs-xl: clamp(18px, 14.000px + 0.3125vw, 20px);
+  --fs-2xl: clamp(21px, 15.000px + 0.4688vw, 24px);
+  --fs-3xl: clamp(28px, 20.000px + 0.6250vw, 32px);
+  --text-2xs: var(--fs-2xs);
+  --text-xs: var(--fs-xs);
+  --text-sm: var(--fs-sm);
+  --text-base: var(--fs-base);
+  --text-lg: var(--fs-lg);
+  --text-xl: var(--fs-xl);
+  --text-2xl: var(--fs-2xl);
+  --text-3xl: var(--fs-3xl);
+
+  /* Spacing (4px base) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+
+  /* Radius */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 10px;
+  --radius-full: 999px;
+
+  /* Shadow */
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.04);
+  --shadow-lg: 0 10px 30px rgb(0 0 0 / 0.12);
+}
+
+/* ---------- 2. Semantic: light ---------- */
+:root {
+  /* shadcn core */
+  --background: var(--gray-0);
+  --foreground: var(--gray-900);
+  --card: var(--gray-0);
+  --card-foreground: var(--gray-900);
+  --popover: var(--gray-0);
+  --popover-foreground: var(--gray-900);
+  --primary: var(--blue-500);         /* same fill both themes: white text 4.6:1 */
+  --primary-foreground: var(--gray-0);
+  --secondary: var(--gray-150);
+  --secondary-foreground: var(--gray-900);
+  --muted: var(--gray-100);
+  --muted-foreground: var(--gray-500);
+  --accent: var(--gray-150);
+  --accent-foreground: var(--gray-900);
+  --destructive: var(--red-700);
+  --destructive-foreground: var(--gray-0);
+  --border: color-mix(in srgb, var(--gray-200) 50%, var(--gray-150));
+  --input: var(--gray-200);
+  --ring: var(--blue-500);
+  --radius: var(--radius-lg);
+
+  /* shadcn sidebar */
+  --sidebar: var(--gray-50);
+  --sidebar-foreground: var(--gray-900);
+  --sidebar-accent: var(--gray-200);
+  --sidebar-border: color-mix(in srgb, var(--gray-200) 50%, var(--gray-150));
+
+  /* LD additions: surfaces & text */
+  --surface-subtle: var(--gray-25);
+  --text-subtle: var(--gray-400);
+  --primary-hover: var(--blue-600);
+  --primary-muted: var(--blue-50);
+  --link: var(--blue-600);            /* accent as text/icon on surfaces */
+
+  /* LD additions: status (muted = tint bg, emphasis = solid, fg = text on muted) */
+  --success-muted: var(--green-50);
+  --success-fg: var(--green-700);
+  --success-emphasis: var(--green-500);
+  --warning-muted: var(--orange-50);
+  --warning-fg: var(--orange-600);
+  --warning-emphasis: var(--orange-400);
+  --danger-muted: var(--red-50);
+  --danger-fg: var(--red-700);
+  --danger-emphasis: var(--red-500);
+  --info-muted: var(--blue-50);
+  --info-fg: var(--blue-600);
+  --info-emphasis: var(--blue-500);
+
+  /* LD additions: priority */
+  --priority-critical-muted: var(--red-100);
+  --priority-critical-fg: var(--red-700);
+  --priority-critical-emphasis: var(--red-600);
+  --priority-high-muted: var(--orange-50);
+  --priority-high-fg: var(--orange-600);
+  --priority-high-emphasis: var(--orange-400);
+  --priority-medium-muted: var(--yellow-50);
+  --priority-medium-fg: var(--yellow-700);
+  --priority-medium-emphasis: var(--yellow-500);
+  --priority-low-muted: var(--blue-50);
+  --priority-low-fg: var(--blue-600);
+  --priority-low-emphasis: var(--blue-500);
+
+  /* LD additions: workflow status (icon color; text stays default) */
+  --status-open: var(--blue-600);
+  --status-in-progress: var(--orange-600);
+  --status-resolved: var(--green-700);
+  --status-dismissed: var(--gray-350);
+
+  /* LD additions: verdict (validation outcome of a path) */
+  --verdict-confirmed-muted: var(--blue-50);
+  --verdict-confirmed-fg: var(--blue-700);
+  --badge-new-muted: var(--magenta-50);
+  --badge-new-fg: var(--magenta-700);
+  --verdict-conditional-muted: var(--purple-50);
+  --verdict-conditional-fg: var(--purple-700);
+  --verdict-refuted-muted: var(--gray-150);
+  --verdict-refuted-fg: var(--gray-600);
+  --verdict-inconclusive-muted: var(--orange-50);
+  --verdict-inconclusive-fg: var(--orange-700);
+  /* processing states (same chip slot, not verdicts) */
+  --verdict-assessing-muted: var(--blue-50);
+  --verdict-assessing-fg: var(--blue-600);
+  --verdict-failed-muted: var(--red-50);
+  --verdict-failed-fg: var(--red-700);
+
+  /* LD additions: graph */
+  --node-entry: var(--green-500);
+  --node-crown: var(--yellow-500);
+  --node-default: var(--gray-400);
+  --edge-default: var(--gray-300);
+  --edge-active: var(--blue-600);
+}
+
+/* ---------- 2. Semantic: dark (first pass) ---------- */
+.dark {
+  --background: var(--gray-950);
+  --foreground: var(--gray-100);
+  --card: var(--gray-850);
+  --card-foreground: var(--gray-100);
+  --popover: var(--gray-850);
+  --popover-foreground: var(--gray-100);
+  --primary: var(--blue-500);         /* fill: white text 4.6:1 */
+  --primary-foreground: var(--gray-0);
+  --secondary: var(--gray-800);
+  --secondary-foreground: var(--gray-100);
+  --muted: var(--gray-800);
+  --muted-foreground: var(--gray-400);
+  --accent: var(--gray-800);
+  --accent-foreground: var(--gray-100);
+  --destructive: var(--red-600);      /* white text 5.3:1 */
+  --border: var(--gray-700);
+  --input: var(--gray-700);
+  --ring: var(--blue-400);
+
+  --sidebar: var(--gray-900);
+  --sidebar-foreground: var(--gray-100);
+  --sidebar-accent: var(--gray-800);
+  --sidebar-border: var(--gray-700);
+
+  --surface-subtle: var(--gray-900);
+  --text-subtle: var(--gray-500);
+  --primary-hover: var(--blue-600);
+  --primary-muted: color-mix(in srgb, var(--blue-500) 18%, transparent);
+  --link: var(--blue-300);            /* 6.5:1 on background, 5.8:1 on card */
+
+  --success-muted: color-mix(in srgb, var(--green-500) 18%, transparent);
+  --success-fg: var(--green-300);
+  --warning-muted: color-mix(in srgb, var(--orange-500) 18%, transparent);
+  --warning-fg: var(--orange-300);
+  --danger-muted: color-mix(in srgb, var(--red-500) 18%, transparent);
+  --danger-fg: var(--red-300);
+  --info-muted: color-mix(in srgb, var(--blue-500) 18%, transparent);
+  --info-fg: var(--blue-300);
+
+  --priority-critical-muted: color-mix(in srgb, var(--red-600) 18%, transparent);
+  --priority-critical-fg: var(--red-300);
+  --priority-high-muted: color-mix(in srgb, var(--orange-500) 18%, transparent);
+  --priority-high-fg: var(--orange-300);
+  --priority-medium-muted: color-mix(in srgb, var(--yellow-600) 18%, transparent);
+  --priority-medium-fg: var(--yellow-400);   /* yellow runs light: one step down to match other hues */
+  --priority-low-muted: color-mix(in srgb, var(--blue-500) 18%, transparent);
+  --priority-low-fg: var(--blue-300);
+
+  /* icons & solid marks: step 400 in dark */
+  --success-emphasis: var(--green-400);
+  --warning-emphasis: var(--orange-400);
+  --danger-emphasis: var(--red-400);
+  --info-emphasis: var(--blue-400);
+  --priority-critical-emphasis: var(--red-400);
+  --priority-high-emphasis: var(--orange-400);
+  --priority-medium-emphasis: var(--yellow-500);
+  --priority-low-emphasis: var(--blue-400);
+
+  --status-open: var(--blue-400);
+  --status-in-progress: var(--orange-300);
+  --status-resolved: var(--green-300);
+  --status-dismissed: var(--gray-500);
+
+  --verdict-confirmed-muted: color-mix(in srgb, var(--blue-500) 18%, transparent);
+  --verdict-confirmed-fg: var(--blue-300);
+  --badge-new-muted: color-mix(in srgb, var(--magenta-500) 18%, transparent);
+  --badge-new-fg: var(--magenta-300);
+  --verdict-conditional-muted: color-mix(in srgb, var(--purple-500) 18%, transparent);
+  --verdict-conditional-fg: var(--purple-300);
+  --verdict-refuted-muted: var(--gray-800);
+  --verdict-refuted-fg: var(--gray-400);
+  --verdict-inconclusive-muted: color-mix(in srgb, var(--orange-500) 18%, transparent);
+  --verdict-inconclusive-fg: var(--orange-300);
+  --verdict-assessing-muted: color-mix(in srgb, var(--blue-500) 18%, transparent);
+  --verdict-assessing-fg: var(--blue-300);
+  --verdict-failed-muted: color-mix(in srgb, var(--red-500) 18%, transparent);
+  --verdict-failed-fg: var(--red-300);
+
+  --node-default: var(--gray-500);
+  --edge-default: var(--gray-700);
+  --edge-active: var(--blue-400);
+}
+
+/* ---------- 3. Tailwind v4 mapping (paste into their globals.css) ----------
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+  --color-priority-critical: var(--priority-critical-emphasis);
+  --color-priority-critical-muted: var(--priority-critical-muted);
+  --color-priority-critical-fg: var(--priority-critical-fg);
+  ... (same pattern for high / medium / low, status, graph)
+  --radius-sm: var(--radius-sm); --radius-md: var(--radius-md); --radius-lg: var(--radius-lg);
+  --font-sans: var(--font-sans); --font-mono: var(--font-mono);
+}
+--------------------------------------------------------------------------- */
+
+/* ---------- Surfaces added during dark pass ---------- */
+:root{--row-tint:var(--surface-subtle);--code-bg:var(--gray-50);--code-border:var(--gray-150)}
+:root.dark{--row-tint:color-mix(in srgb,var(--foreground) 5%,var(--background));--code-bg:color-mix(in srgb,var(--foreground) 9%,var(--card));--code-border:color-mix(in srgb,var(--foreground) 14%,var(--card))}
+/* ---------- Ash dark (overrides .dark) ---------- */
+:root.dark{--background:var(--gray-750);--foreground:var(--gray-100);--card:var(--gray-700);--card-foreground:var(--gray-100);--popover:var(--gray-700);--popover-foreground:var(--gray-100);--secondary:var(--gray-675);--secondary-foreground:var(--gray-100);--muted:var(--gray-675);--muted-foreground:var(--gray-400);--accent:var(--gray-675);--accent-foreground:var(--gray-100);--border:var(--gray-675);--input:var(--gray-650);--sidebar:var(--gray-775);--sidebar-foreground:var(--gray-100);--sidebar-accent:var(--gray-700);--sidebar-border:var(--gray-700);--surface-subtle:var(--gray-775);--text-subtle:var(--gray-450);--verdict-refuted-muted:var(--gray-675);--edge-default:var(--gray-650)}
+
+
+/* Component-level tokens shared with the HTML prototype */
+:root{--text-secondary:var(--gray-600);--badge-fs:var(--fs-xs)}
+.dark{--text-secondary:var(--gray-300)}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-surface-subtle: var(--surface-subtle);
+  --color-text-subtle: var(--text-subtle);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-muted: var(--primary-muted);
+  --color-link: var(--link);
+  --color-success-muted: var(--success-muted);
+  --color-success-fg: var(--success-fg);
+  --color-success-emphasis: var(--success-emphasis);
+  --color-warning-muted: var(--warning-muted);
+  --color-warning-fg: var(--warning-fg);
+  --color-warning-emphasis: var(--warning-emphasis);
+  --color-danger-muted: var(--danger-muted);
+  --color-danger-fg: var(--danger-fg);
+  --color-danger-emphasis: var(--danger-emphasis);
+  --color-info-muted: var(--info-muted);
+  --color-info-fg: var(--info-fg);
+  --color-info-emphasis: var(--info-emphasis);
+  --color-priority-critical-muted: var(--priority-critical-muted);
+  --color-priority-critical-fg: var(--priority-critical-fg);
+  --color-priority-critical-emphasis: var(--priority-critical-emphasis);
+  --color-priority-high-muted: var(--priority-high-muted);
+  --color-priority-high-fg: var(--priority-high-fg);
+  --color-priority-high-emphasis: var(--priority-high-emphasis);
+  --color-priority-medium-muted: var(--priority-medium-muted);
+  --color-priority-medium-fg: var(--priority-medium-fg);
+  --color-priority-medium-emphasis: var(--priority-medium-emphasis);
+  --color-priority-low-muted: var(--priority-low-muted);
+  --color-priority-low-fg: var(--priority-low-fg);
+  --color-priority-low-emphasis: var(--priority-low-emphasis);
+  --color-status-open: var(--status-open);
+  --color-status-in-progress: var(--status-in-progress);
+  --color-status-resolved: var(--status-resolved);
+  --color-status-dismissed: var(--status-dismissed);
+  --color-verdict-confirmed-muted: var(--verdict-confirmed-muted);
+  --color-verdict-confirmed-fg: var(--verdict-confirmed-fg);
+  --color-badge-new-muted: var(--badge-new-muted);
+  --color-badge-new-fg: var(--badge-new-fg);
+  --color-verdict-conditional-muted: var(--verdict-conditional-muted);
+  --color-verdict-conditional-fg: var(--verdict-conditional-fg);
+  --color-verdict-refuted-muted: var(--verdict-refuted-muted);
+  --color-verdict-refuted-fg: var(--verdict-refuted-fg);
+  --color-verdict-inconclusive-muted: var(--verdict-inconclusive-muted);
+  --color-verdict-inconclusive-fg: var(--verdict-inconclusive-fg);
+  --color-verdict-assessing-muted: var(--verdict-assessing-muted);
+  --color-verdict-assessing-fg: var(--verdict-assessing-fg);
+  --color-verdict-failed-muted: var(--verdict-failed-muted);
+  --color-verdict-failed-fg: var(--verdict-failed-fg);
+  --color-node-entry: var(--node-entry);
+  --color-node-crown: var(--node-crown);
+  --color-node-default: var(--node-default);
+  --color-edge-default: var(--edge-default);
+  --color-edge-active: var(--edge-active);
+  --color-row-tint: var(--row-tint);
+  --color-code-bg: var(--code-bg);
+  --color-code-border: var(--code-border);
+  --color-hover-tint: var(--hover-tint);
+  --font-sans: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "DM Mono", ui-monospace, SFMono-Regular, Menlo, monospace;  --color-text-secondary: var(--text-secondary);
+  --text-2xs: var(--fs-2xs);
+  --text-2xs--line-height: 1.4;
+  --text-xs: var(--fs-xs);
+  --text-xs--line-height: 1.4;
+  --text-sm: var(--fs-sm);
+  --text-sm--line-height: 1.4;
+  --text-base: var(--fs-base);
+  --text-base--line-height: 1.55;
+  --text-lg: var(--fs-lg);
+  --text-lg--line-height: 1.35;
+  --text-xl: var(--fs-xl);
+  --text-xl--line-height: 1.25;
+  --text-2xl: var(--fs-2xl);
+  --text-2xl--line-height: 1.2;
+  --text-3xl: var(--fs-3xl);
+  --text-3xl--line-height: 1.1;
+}

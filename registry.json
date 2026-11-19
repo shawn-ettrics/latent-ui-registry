@@ -1,0 +1,364 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "latent",
+  "homepage": "https://latent-ui-registry.pages.dev",
+  "items": [
+    {
+      "name": "theme",
+      "type": "registry:style",
+      "title": "Latent theme",
+      "description": "Design tokens (light + dark) and the Tailwind v4 colour mapping. Import after tailwindcss.",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/latent/theme/latent.css",
+          "type": "registry:file",
+          "target": "src/styles/latent.css"
+        }
+      ]
+    },
+    {
+      "name": "utils",
+      "type": "registry:lib",
+      "title": "utils",
+      "description": "cn() helper.",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/latent/lib/utils.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "icons",
+      "type": "registry:ui",
+      "title": "Verdict and status icons",
+      "description": "16px verdict and remediation-status glyphs on one 24px grid.",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://latent-ui-registry.pages.dev/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "registry/latent/ui/icons.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:ui",
+      "title": "Tooltip",
+      "description": "Popover-styled tooltip.",
+      "dependencies": [
+        "@radix-ui/react-tooltip"
+      ],
+      "registryDependencies": [
+        "https://latent-ui-registry.pages.dev/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "registry/latent/ui/tooltip.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "title": "Button",
+      "description": "Primary, outline, ghost, destructive and link buttons at 32px and 24px, plus icon-only sizes with tooltips.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://latent-ui-registry.pages.dev/r/utils.json",
+        "https://latent-ui-registry.pages.dev/r/tooltip.json"
+      ],
+      "files": [
+        {
+          "path": "registry/latent/ui/button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "badge",
+      "type": "registry:ui",
+      "title": "Badges",
+      "description": "One Badge with tones (priority, verdict, status, New/Escalated, neutral, selected, outline), two sizes (20px, 24px), optional icon, iconRight and tooltip. Also ToggleBadge and FilterBadge.",
+      "dependencies": [
+        "class-variance-authority",
+        "lucide-react@0.469.0"
+      ],
+      "registryDependencies": [
+        "https://latent-ui-registry.pages.dev/r/utils.json",
+        "https://latent-ui-registry.pages.dev/r/tooltip.json"
+      ],
+      "files": [
+        {
+          "path": "registry/latent/ui/badge.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "count-chip",
+      "type": "registry:ui",
+      "title": "Count chip",
+      "description": "Related-object count with icon in a fixed, right-aligned slot, plus CountGroup.",
+      "dependencies": [
+        "lucide-react@0.469.0"
+      ],
+      "registryDependencies": [
+        "https://latent-ui-registry.pages.dev/r/utils.json",
+        "https://latent-ui-registry.pages.dev/r/tooltip.json"
+      ],
+      "files": [
+        {
+          "path": "registry/latent/ui/count-chip.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "type": "registry:ui",
+      "title": "Input",
+      "description": "Borderless filled field with a ring border on focus.",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://latent-ui-registry.pages.dev/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "registry/latent/ui/input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "status-select",
+      "type": "registry:ui",
+      "title": "Status select",
+      "description": "Status badge button with chevrons that opens a menu to set remediation status.",
+      "dependencies": [
+        "@radix-ui/react-dropdown-menu",
+        "lucide-react@0.469.0"
+      ],
+      "registryDependencies": [
+        "https://latent-ui-registry.pages.dev/r/utils.json",
+        "https://latent-ui-registry.pages.dev/r/badge.json"
+      ],
+      "files": [
+        {
+          "path": "registry/latent/ui/status-select.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "logo",
+      "type": "registry:ui",
+      "title": "Logo",
+      "description": "Latent Defense wordmark.",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/latent/ui/logo.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sidebar",
+      "type": "registry:ui",
+      "title": "Sidebar",
+      "description": "App sidebar: org switcher, branch switcher with analysis time, section labels, nav items with counts.",
+      "dependencies": [
+        "@radix-ui/react-dropdown-menu",
+        "lucide-react@0.469.0"
+      ],
+      "registryDependencies": [
+        "https://latent-ui-registry.pages.dev/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "registry/latent/ui/sidebar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "object-icons",
+      "type": "registry:lib",
+      "title": "Object icons",
+      "description": "The Lucide icon for each triage object (attack path, remediation, finding, resource, crown jewel, owner).",
+      "dependencies": [
+        "lucide-react@0.469.0"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/latent/lib/object-icons.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "attack-path",
+      "type": "registry:ui",
+      "title": "Attack path",
+      "description": "Vertical attack path: isometric resource tiles, numbered steps, remediation and branch pills, and zone boxes per account. The step line stays on one rail across box edges.",
+      "dependencies": [
+        "lucide-react@0.469.0"
+      ],
+      "registryDependencies": [
+        "https://latent-ui-registry.pages.dev/r/utils.json",
+        "https://latent-ui-registry.pages.dev/r/tooltip.json"
+      ],
+      "files": [
+        {
+          "path": "registry/latent/ui/attack-path.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "data-table",
+      "type": "registry:ui",
+      "title": "Data table",
+      "description": "Grid-based list table with no header row: subgrid rows, per-column sizing, hideable columns, collapsible groups, and cell helpers (TitleCell, BadgeGroup, DateCell, Trail).",
+      "dependencies": [
+        "lucide-react@0.469.0"
+      ],
+      "registryDependencies": [
+        "https://latent-ui-registry.pages.dev/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "registry/latent/ui/data-table.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tabs",
+      "type": "registry:ui",
+      "title": "Tabs",
+      "description": "Segmented quick-view tabs with counts, 32px, keyboard arrows.",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://latent-ui-registry.pages.dev/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "registry/latent/ui/tabs.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "toolbar",
+      "type": "registry:ui",
+      "title": "Toolbar",
+      "description": "List toolbar layout (tabs left, search and actions right, active filters below) and a 32px SearchField.",
+      "dependencies": [
+        "lucide-react@0.469.0"
+      ],
+      "registryDependencies": [
+        "https://latent-ui-registry.pages.dev/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "registry/latent/ui/toolbar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "menu",
+      "type": "registry:ui",
+      "title": "Menu",
+      "description": "Dropdown menu parts (items, checkbox items, submenus, labels, separators), a small MenuSelect, and the composed DisplayMenu and FilterMenu.",
+      "dependencies": [
+        "@radix-ui/react-dropdown-menu@2.1.4",
+        "@radix-ui/react-popover@1.1.4",
+        "lucide-react@0.469.0"
+      ],
+      "registryDependencies": [
+        "https://latent-ui-registry.pages.dev/r/utils.json",
+        "https://latent-ui-registry.pages.dev/r/badge.json"
+      ],
+      "files": [
+        {
+          "path": "registry/latent/ui/menu.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "content",
+      "type": "registry:ui",
+      "title": "Content blocks",
+      "description": "Section (heading + count + action), Callout, CodeBlock (evidence with copy), KeyValue rows.",
+      "dependencies": [
+        "lucide-react@0.469.0"
+      ],
+      "registryDependencies": [
+        "https://latent-ui-registry.pages.dev/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "registry/latent/ui/content.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "form",
+      "type": "registry:ui",
+      "title": "Form controls",
+      "description": "Field, Checkbox, Switch, RadioGroup, Select and Textarea in the filled-field style.",
+      "dependencies": [
+        "@radix-ui/react-dropdown-menu@2.1.4",
+        "lucide-react@0.469.0"
+      ],
+      "registryDependencies": [
+        "https://latent-ui-registry.pages.dev/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "registry/latent/ui/form.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "dialog",
+      "type": "registry:ui",
+      "title": "Dialog and toast",
+      "description": "Modal Dialog with title, description, body and footer; ToastProvider + useToast.",
+      "dependencies": [
+        "@radix-ui/react-dialog@1.1.4",
+        "lucide-react@0.469.0"
+      ],
+      "registryDependencies": [
+        "https://latent-ui-registry.pages.dev/r/utils.json"
+      ],
+      "files": [
+        {
+          "path": "registry/latent/ui/dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    }
+  ]
+}
